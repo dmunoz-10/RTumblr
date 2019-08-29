@@ -11,7 +11,7 @@ class Comment < ApplicationRecord
   # Validates presence of the following parameters
   validates_presence_of :body
   # Validates to have an association with a post and a user
-  validates_associated :post, :user
+  # validates_associated :post, :user
 
   ### Associations ###
   # Post Association

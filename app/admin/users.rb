@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
-  permit_params :first_name, :last_name, :username, :gender, :email, :password,
-                :password_confirmation, :birth_date, :phone_number
+  permit_params :first_name, :last_name, :username, :avatar, :gender, :email,
+                :password, :password_confirmation, :birth_date, :phone_number
 
   scope :all
   scope :males
@@ -17,6 +17,7 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :username
+    column :avatar
     column :gender
     column :email
     column :created_at
@@ -36,11 +37,12 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       f.input :username
+      f.input :avatar
       f.input :gender
       f.input :email
       f.input :password
       f.input :password_confirmation
-      f.input :birth_date
+      f.input :birth_date, :as => :string, :input_html => {:class => 'datepicker hasDatePicker'}
       f.input :phone_number
     end
     f.actions

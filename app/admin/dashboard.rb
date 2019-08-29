@@ -9,9 +9,9 @@ ActiveAdmin.register_page "Dashboard" do
     #  end
     #end
 
-    #panel "Comment" do
-    #  pie_chart Post.group(:likes).count
-    #end
+    panel "Users" do
+      pie_chart User.group(:gender).count
+    end
 
     # Here is an example of a simple dashboard with columns and panels.
     #

@@ -4,7 +4,7 @@ class Follow < ApplicationRecord
 
   ### Validations ###
   # Validates to have an association with a leader and a follower
-  validates_associated :leader, :follower
+  # validates_associated :leader, :follower
 
   ### Associations ###
   # Leader Association

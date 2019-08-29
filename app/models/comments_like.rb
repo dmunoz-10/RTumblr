@@ -4,7 +4,7 @@ class CommentsLike < ApplicationRecord
 
   ### Validations ###
   # Validates to have an association with a user and a comment
-  validates_associated :user, :comment
+  # validates_associated :user, :comment
 
   ### Associations ###
   # User Association

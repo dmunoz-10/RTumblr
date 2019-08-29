@@ -15,7 +15,7 @@ class Post < ApplicationRecord
   # Validates to accept only true or false in private parameter
   validates :private, inclusion: { in: [true, false] }
   # Validates to have an association with a blog
-  validates_associated :blog
+  # validates_associated :blog
 
   ### Associations ###
   # Blog Association

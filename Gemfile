@@ -12,7 +12,7 @@ gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # Use JWT to auth user
@@ -34,6 +34,9 @@ gem 'arctic_admin'
 gem "active_admin_paranoia" , '~> 1.0.11'
 # Use Chartkick to create Javascript Chart for Admins' interface
 gem "chartkick"
+# Use CarrierWave and Cloudinary to upload media
+gem 'carrierwave'
+gem 'cloudinary'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -45,7 +48,7 @@ gem "chartkick"
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

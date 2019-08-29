@@ -8,7 +8,7 @@ class Blog < ApplicationRecord
   # Validates presence of the following parameters
   validates_presence_of :name
   # Validates to have an association with a user
-  validates_associated :user
+  # validates_associated :user
 
   ### Associations ###
   # User Association

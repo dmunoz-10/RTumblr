@@ -6,6 +6,9 @@ class User < ApplicationRecord
   ### Encrypt password ###
   has_secure_password
 
+  ### CarrierWave Settings ###
+  mount_uploader :avatar, AvatarUploader
+
   ### Soft delete ###
   acts_as_paranoid without_default_scope: true
 
@@ -18,7 +21,7 @@ class User < ApplicationRecord
   scope :rather_not_to_say, -> { where(gender: 4) }
   scope :others, -> { where(gender: 5) }
 
-  ### Data for parameters to choose ###
+  ### Data ###
   enum gender: %i[male female transgender transsexual rather_not_to_say other]
 
   ### Validations ###

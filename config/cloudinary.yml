@@ -1,0 +1,13 @@
+development:
+  cloud_name: 'dmunoz-10'
+  api_key: "759595986543935"
+  api_secret: "Hjq__3hakLD9kd3s5s7392Z__v0"
+  secure: true
+  cdn_subdomain: true
+
+production:
+  cloud_name: "dmunoz-10"
+  api_key: "759595986543935"
+  api_secret: "Hjq__3hakLD9kd3s5s7392Z__v0"
+  secure: true
+  cdn_subdomain: true

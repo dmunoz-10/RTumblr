@@ -1,15 +1,11 @@
 class Api::V1::UsersController < ApiController
-  before_action :set_user, except: %i[genders create liked_posts
+  before_action :set_user, except: %i[create show_me liked_posts
                                       liked_comments]
-  skip_before_action :authenticate_request, only: %i[genders create show]
-  wrap_parameters :user, include: %i[ first_name last_name username image
+  skip_before_action :authenticate_request, only: %i[create show]
+  wrap_parameters :user, include: %i[ first_name last_name username avatar
                                       gender email password
                                       password_confirmation birth_date
                                       phone_number ]
-
-  def genders
-    render json: { genders: User.genders }, status: :ok
-  end
 
   def create
     @user = User.new(user_params)
@@ -21,6 +17,11 @@ class Api::V1::UsersController < ApiController
   end
 
   def show; end
+
+  def show_me
+    @user = @current_user
+    render :show, status: :ok
+  end
 
   def update
     if @user.update(user_params)
@@ -75,7 +76,7 @@ class Api::V1::UsersController < ApiController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :image,
+    params.require(:user).permit(:first_name, :last_name, :username, :avatar,
                                  :gender, :email, :password,
                                  :password_confirmation, :birth_date,
                                  :phone_number)

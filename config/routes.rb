@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/users/genders', to: 'users#genders', as: 'users_genders'
       resources :users, except: :index
       post '/users/authenticate', to: 'authentication#authenticate',
-                                 as: 'user_authenticate'
+                                 as: 'user_authenticate', format: "json"
+      get '/user/me', to: 'users#show_me', as: 'user_me', format: "json"
       get '/users/:id/leaders', to: 'users#leaders', as: 'user_leaders'
       get '/users/:id/followers', to: 'users#followers', as: 'user_followers'
       post '/users/:id/follow', to: 'users#follow', as: 'follow_user'
@@ -33,5 +33,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
+ # mount ActionCable.server => '/cable'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
